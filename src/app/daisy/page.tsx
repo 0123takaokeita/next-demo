@@ -1,22 +1,51 @@
+'use client'
+
 import Image from 'next/image'
-import Link from 'next/link'
+import pic from '../images/profile.png'
 
 export default function Home() {
-  const ary = ['takao', 'lobin', 'tomo']
-  const items = ['コンテンツ1', 'コンテンツ2', 'コンテンツ3'];
-
-  const names = items.map((item, i) => (
-    <li key={i}>{item}</li>
-  ))
-
   return (
   <div>
-      <h5>Meet the</h5>
-      <h1>Enginners</h1>
-      <ul>{names}</ul>
-      <button>Button</button>
-      <Link href="/login" className="bg-gray-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded" >Login</Link>
-      <Link href="/dashboard" className="bg-gray-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded" >Dashboard</Link>
+    <div className="chat chat-start">
+    <div className="chat-image avatar">
+      <div className="w-10 rounded-full">
+        <Image
+          src={pic}
+          width={40}
+          height={40}
+          alt="Your Name"
+        />
+      </div>
+    </div>
+    <div className="chat-header">
+      Obi-Wan Kenobi
+      <time className="text-xs opacity-50">12:45</time>
+    </div>
+    <div className="chat-bubble">You were the Chosen One!</div>
+    <div className="chat-footer opacity-50">
+      Delivered
+    </div>
+  </div>
+  <div className="chat chat-end">
+    <div className="chat-image avatar">
+      <div className="w-10 rounded-full">
+        <Image
+          src={pic}
+          width={40}
+          height={40}
+          alt="Your Name"
+        />
+      </div>
+    </div>
+    <div className="chat-header">
+      Anakin
+      <time className="text-xs opacity-50">12:46</time>
+    </div>
+    <div className="chat-bubble">I hate you!</div>
+    <div className="chat-footer opacity-50">
+      Seen at 12:46
+    </div>
+  </div>
   </div>
   )
 }
