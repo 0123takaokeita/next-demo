@@ -3,8 +3,7 @@ import Image from 'next/image'
 export default function Home() {
   const ary = ['takao', 'lobin', 'tomo']
   const items = ['コンテンツ1', 'コンテンツ2', 'コンテンツ3'];
-
-  const names = items.map((item, i) => (
+  const names = ary.map((item, i) => (
     <li key={i}>{item}</li>
   ))
 
